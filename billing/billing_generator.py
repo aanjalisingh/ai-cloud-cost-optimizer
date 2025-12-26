@@ -23,18 +23,18 @@ Format:
     raw_response = call_llm(prompt)
 
     try:
-        # ✅ CONVERT STRING → JSON
+        #  CONVERT STRING → JSON
         billing_json = json.loads(raw_response)
     except Exception as e:
-        print("❌ Invalid billing JSON")
+        print(" Invalid billing JSON")
         print(raw_response)
         return None
 
     os.makedirs("data", exist_ok=True)
 
-    # ✅ SAVE AS PROPER FORMATTED JSON
+    # SAVE AS PROPER FORMATTED JSON
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(billing_json, f, indent=2)
 
-    print(f"✅ Synthetic billing saved to {OUTPUT_FILE}")
+    print(f"Synthetic billing saved to {OUTPUT_FILE}")
     return billing_json

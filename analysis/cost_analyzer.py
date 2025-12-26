@@ -8,25 +8,25 @@ OUTPUT_FILE = Path("data/cost_optimization_report.json")
 
 def analyze_costs():
     try:
-        # -------------------------------
+
         # Load billing
-        # -------------------------------
+
         if not BILLING_FILE.exists():
             raise FileNotFoundError("generated_billing.json not found")
 
         with open(BILLING_FILE, "r", encoding="utf-8") as f:
             billing = json.load(f)
 
-        # -------------------------------
+
         # Load project profile
-        # -------------------------------
+
         if not PROFILE_FILE.exists():
             raise FileNotFoundError("project_profile.json not found")
 
         with open(PROFILE_FILE, "r", encoding="utf-8") as f:
             profile_data = json.load(f)
 
-        # ✅ FIX: profile is a LIST
+        # FIX: profile is a LIST
         if isinstance(profile_data, dict):
             project = profile_data
 
@@ -38,15 +38,15 @@ def analyze_costs():
 
         budget = project.get("budget_inr_per_month", 50000)
 
-        # -------------------------------
+
         # Cost aggregation
-        # -------------------------------
+
         total_cost = sum(item["cost_inr"] for item in billing)
         variance = budget - total_cost
 
-        # -------------------------------
+
         # Recommendations
-        # -------------------------------
+
         recommendations = []
 
         for item in billing:
@@ -66,9 +66,9 @@ def analyze_costs():
                     "cloud_providers": ["Open Source"]
                 })
 
-        # -------------------------------
+
         # Final report (STRICT FORMAT)
-        # -------------------------------
+
         report = {
             "total_cost_inr": total_cost,
             "budget_inr": budget,
@@ -77,16 +77,16 @@ def analyze_costs():
             "recommendations": recommendations
         }
 
-        # -------------------------------
+
         # Write JSON to file
-        # -------------------------------
+
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             json.dump(report, f, indent=2)
 
-        print("✅ cost_optimization_report.json generated successfully")
+        print(" cost_optimization_report.json generated successfully")
 
     except json.JSONDecodeError:
-        print("❌ JSON parsing failed")
+        print(" JSON parsing failed")
 
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
