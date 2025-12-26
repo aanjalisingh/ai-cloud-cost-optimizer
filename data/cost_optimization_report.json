@@ -1,0 +1,18 @@
+{
+  "total_cost_inr": 39000,
+  "budget_inr": 5,
+  "variance_inr": -38995,
+  "over_budget": true,
+  "recommendations": [
+    {
+      "title": "Switch to Reserved Instances",
+      "current_cost": 15000,
+      "potential_savings": 4000,
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    }
+  ]
+}

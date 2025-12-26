@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Enterprise SaaS Application",
+    "budget_inr_per_month": 5,
+    "description": "An enterprise SaaS application serving multiple clients. Microservices architecture deployed on cloud VMs. Use of PostgreSQL and Redis for caching. Integration with Object Storage for documents and backups. High network traffic across regions. Monthly budget is INR 12,00,000.",
+    "techni_stack": [
+      "PostgreSQL",
+      "Redis",
+      "Object storage"
+    ],
+    "non_functional_requirements": [
+      "Advanced monitoring and logging"
+    ]
+  }
+]

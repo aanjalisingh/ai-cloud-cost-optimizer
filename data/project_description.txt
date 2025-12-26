@@ -1,0 +1,1 @@
+An enterprise SaaS application serving multiple clients. Microservices architecture deployed on cloud VMs. Uses PostgreSQL and Redis for caching. Object storage is used for documents and backups. Advanced monitoring and logging are required. High network traffic across regions. Monthly cloud budget is 1,20,000 INR.

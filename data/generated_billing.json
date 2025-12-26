@@ -1,0 +1,22 @@
+[
+  {
+    "service": "Compute",
+    "cost_inr": 15000
+  },
+  {
+    "service": "Database",
+    "cost_inr": 10000
+  },
+  {
+    "service": "Storage",
+    "cost_inr": 5000
+  },
+  {
+    "service": "Monitoriing",
+    "cost_inr": 2000
+  },
+  {
+    "service": "Networking",
+    "cost_inr": 7000
+  }
+]
